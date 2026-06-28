@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Binary {
+    public static void main(String args[]) {
+
+        int n = 3;
+        Queue<String> q = new LinkedList<>();
+
+        q.add("");
+
+        while(!q.isEmpty()) {
+
+            String s = q.remove();
+
+            if(s.length() == n)
+                System.out.println(s);
+            else {
+                q.add(s + "0");
+                q.add(s + "1");
+            }
+        }
+    }
+}
