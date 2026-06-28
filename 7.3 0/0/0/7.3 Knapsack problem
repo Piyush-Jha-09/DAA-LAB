@@ -1,0 +1,25 @@
+class Knapsack {
+
+    static int max(int a,int b){
+        return (a>b)?a:b;
+    }
+
+    static int knap(int w,int wt[],int p[],int n){
+        if(n==0 || w==0)
+            return 0;
+
+        if(wt[n-1]>w)
+            return knap(w,wt,p,n-1);
+
+        return max(p[n-1]+knap(w-wt[n-1],wt,p,n-1),
+                   knap(w,wt,p,n-1));
+    }
+
+    public static void main(String args[]){
+        int p[]={60,100,120};
+        int wt[]={10,20,30};
+        int w=50;
+
+        System.out.println("Maximum Profit = "+knap(w,wt,p,3));
+    }
+}
