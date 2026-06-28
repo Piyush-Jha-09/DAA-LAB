@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class MatrixSearch {
+    public static void main(String[] args){
+        int[][] a={
+            {10,20,30},
+            {15,25,35},
+            {27,29,37}
+        };
+
+        Scanner sc=new Scanner(System.in);
+        int key=sc.nextInt();
+        Int i =0, j=2;
+        boolean found=false;
+
+        while (i < 3 && j >= 0) {
+if (a[i][j] == key) {
+found = true;
+break;
+} else if (key < a[i][j]) {
+j--; // move left
+} else {
+i++; // move down
+}
+}
+
+if (found) System.out.println("Found");
+else System.out.println("Not Found");
+}
+}
