@@ -1,0 +1,25 @@
+class SumSubset {
+
+    static void find(int a[], int i, int sum, String s) {
+
+        if(sum == 0) {
+            System.out.println(s);
+            return;
+        }
+
+        if(i == a.length || sum < 0)
+            return;
+
+        find(a, i + 1, sum - a[i], s + a[i] + " ");
+        find(a, i + 1, sum, s);
+    }
+
+    public static void main(String args[]) {
+
+        int a[] = {1,2,1};
+        int sum = 3;
+
+        System.out.println("Subsets are:");
+        find(a,0,sum,"");
+    }
+}
