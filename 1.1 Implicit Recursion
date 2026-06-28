@@ -1,18 +1,18 @@
-import java.util.*;
-
 class IR {
-    static int findLargest(List<Integer> a) {
-        return Collections.max(a);
-    }
+    public static void main(String args[]) {
+        int a[]={1,2,3,4,5};
+        int max=a[0], second=a[0];
 
-    static int findSecondLargest(List<Integer> a) {
-        int x = findLargest(a);
-        a.remove(Integer.valueOf(x));
-        return findLargest(a);
-    }
+        for(int i=1;i<a.length;i++){
+            if(a[i]>max){
+                second=max;
+                max=a[i];
+            }
+            else if(a[i]>second && a[i]!=max){
+                second=a[i];
+            }
+        }
 
-    public static void main(String[] args) {
-        List<Integer> a = new ArrayList<>(Arrays.asList(1,2,3,4,5));
-        System.out.println(findSecondLargest(a));
+        System.out.println(second);
     }
 }
