@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Mice {
+    public static void main(String args[]) {
+
+        int mice[] = {-3,7,5,9,16};
+        int holes[] = {1,9,15,4,14};
+
+        Arrays.sort(mice);
+        Arrays.sort(holes);
+
+        int max = 0;
+
+        for(int i=0;i<mice.length;i++) {
+            int d = Math.abs(mice[i]-holes[i]);
+            if(d > max)
+                max = d;
+        }
+
+        System.out.println("Minimum Time = " + max);
+    }
+}
