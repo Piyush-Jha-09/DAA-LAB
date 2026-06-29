@@ -10,7 +10,7 @@ public class MatrixSearch {
 
         Scanner sc=new Scanner(System.in);
         int key=sc.nextInt();
-        Int i =0, j=2;
+        int i =0, j=2;
         boolean found=false;
 
         while (i < 3 && j >= 0) {
