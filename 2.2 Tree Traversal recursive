@@ -1,0 +1,46 @@
+class Node {
+    int data;
+    Node left, right;
+    Node(int d) { data = d; }
+}
+
+class TreeTraversal {
+
+    static void inorder(Node r) {
+        if (r == null) return;
+        inorder(r.left);
+        System.out.print(r.data + " ");
+        inorder(r.right);
+    }
+
+    static void preorder(Node r) {
+        if (r == null) return;
+        System.out.print(r.data + " ");
+        preorder(r.left);
+        preorder(r.right);
+    }
+
+    static void postorder(Node r) {
+        if (r == null) return;
+        postorder(r.left);
+        postorder(r.right);
+        System.out.print(r.data + " ");
+    }
+
+    public static void main(String[] args) {
+        Node r = new Node(1);
+        r.left = new Node(2);
+        r.right = new Node(3);
+        r.left.left = new Node(4);
+        r.left.right = new Node(5);
+
+        System.out.print("Inorder: ");
+        inorder(r);
+
+        System.out.print("\nPreorder: ");
+        preorder(r);
+
+        System.out.print("\nPostorder: ");
+        postorder(r);
+    }
+}
